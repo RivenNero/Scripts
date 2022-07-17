@@ -6,6 +6,6 @@ cd ${SHELL_FOLDER}
 
 sudo docker compose pull
 
-sudo docker compose down
+./down.sh
 
-sudo docker compose up -d
+./up.sh
