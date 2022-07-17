@@ -1,0 +1,64 @@
+version: "3.9"
+
+services:
+  service.ttrss:
+    image: wangqiru/ttrss:latest
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    environment:
+      # Enter your domain name
+      SELF_URL_PATH: "https://example.com"
+      # Enter your password
+      DB_PASS: ""
+      PUID: 1000
+      PGID: 1000
+    volumes:
+      - feed-icons:/var/www/feed-icons/
+    ports:
+      - target: 80
+        published: 181
+        protocol: tcp
+        mode: host
+    networks:
+      - public_access
+      - service
+      - postgres
+
+  service.mercury:
+    image: wangqiru/mercury-parser-api:latest
+    restart: unless-stopped
+    networks:
+      - public_access
+      - service
+
+  service.opencc:
+    image: wangqiru/opencc-api-server:latest
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+    networks:
+      - service
+
+  database.postgres:
+    image: postgres:13-alpine
+    restart: unless-stopped
+    environment:
+      # Enter the same password as DB_PASS
+      POSTGRES_PASSWORD: ""
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - postgres
+
+networks:
+  public_access:
+    internal: false
+  service:
+    internal: true
+  postgres:
+    internal: true
+
+volumes:
+  feed-icons:
+  postgres:
