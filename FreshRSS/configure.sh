@@ -12,9 +12,9 @@ echo "0 3 * * 5 root /bin/bash ${SHELL_FOLDER}/update.sh" | sudo tee -a /etc/cro
 
 ./up.sh
 
-sudo mv Extensions/xExtension-CustomCSS /var/lib/docker/volumes/rss_extensions/_data
-sudo mv Extensions/xExtension-CustomJS /var/lib/docker/volumes/rss_extensions/_data
-sudo mv Extensions/xExtension-QuickCollapse /var/lib/docker/volumes/rss_extensions/_data
-sudo mv Extensions/xExtension-ReadingTime /var/lib/docker/volumes/rss_extensions/_data
+sudo mv Extensions/xExtension-CustomCSS /var/lib/docker/volumes/freshrss_extensions/_data
+sudo mv Extensions/xExtension-CustomJS /var/lib/docker/volumes/freshrss_extensions/_data
+sudo mv Extensions/xExtension-QuickCollapse /var/lib/docker/volumes/freshrss_extensions/_data
+sudo mv Extensions/xExtension-ReadingTime /var/lib/docker/volumes/freshrss_extensions/_data
 
 ./restart.sh
