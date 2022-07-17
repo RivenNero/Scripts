@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  freshrss:
+    image: freshrss/freshrss
+    restart: unless-stopped
+    volumes:
+      - data:/var/www/FreshRSS/data
+      - extensions:/var/www/FreshRSS/extensions
+    logging:
+      options:
+        max-size: 128m
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+        mode: host
+    networks:
+      - public_access
+
+networks:
+  public_access:
+    internal: false
+
+volumes:
+  data:
+  extensions:
