@@ -17,4 +17,6 @@ sudo mv Extensions/xExtension-CustomJS /var/lib/docker/volumes/freshrss_extensio
 sudo mv Extensions/xExtension-QuickCollapse /var/lib/docker/volumes/freshrss_extensions/_data
 sudo mv Extensions/xExtension-ReadingTime /var/lib/docker/volumes/freshrss_extensions/_data
 
+sudo chown -R root:www-data /var/lib/docker/volumes/freshrss_extensions/_data
+
 ./restart.sh
