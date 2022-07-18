@@ -1,3 +1,3 @@
-# Docker compose file for Atom/RSS
+# Description
 
-This is some Docker compose files and scripts for my personal use to configure RSS/Atom services, I generally use it with Cloudflare Tunnels, so it does not contain HTTPS configuration.
+This is the script I personally use to configure the service, mostly with Cloudflare Tunnels, so most scripts do not contain HTTPS configuration.
