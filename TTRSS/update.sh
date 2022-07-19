@@ -4,8 +4,8 @@ SHELL_FOLDER=$(dirname $(readlink -f "$0"))
 
 cd ${SHELL_FOLDER}
 
-sudo docker compose pull
-
 ./down.sh
+
+sudo docker compose pull
 
 ./up.sh
