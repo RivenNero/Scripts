@@ -6,6 +6,6 @@ cd ${SHELL_FOLDER}
 
 sudo docker compose pull
 
-echo "0 3 * * 5 root /bin/bash ${SHELL_FOLDER}/update.sh" | sudo tee -a /etc/crontab > /dev/null
+echo "0 3 * * * root /bin/bash ${SHELL_FOLDER}/update.sh" | sudo tee -a /etc/crontab > /dev/null
 
 ./up.sh
