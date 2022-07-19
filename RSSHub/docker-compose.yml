@@ -17,6 +17,7 @@ services:
       - browserless
     ports:
       - target: 1200
+        host_ip: 127.0.0.1
         published: 1200
         protocol: tcp
         mode: host

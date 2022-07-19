@@ -12,6 +12,7 @@ services:
         max-size: 128m
     ports:
       - target: 80
+        host_ip: 127.0.0.1
         published: 80
         protocol: tcp
         mode: host

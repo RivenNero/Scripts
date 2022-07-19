@@ -17,6 +17,7 @@ services:
       - feed-icons:/var/www/feed-icons/
     ports:
       - target: 80
+        host_ip: 127.0.0.1
         published: 181
         protocol: tcp
         mode: host
